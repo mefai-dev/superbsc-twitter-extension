@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperBSC Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options">
+    <div class="options-header">
+      <img src="../icons/icon-48.png" alt="SuperBSC" class="options-logo">
+      <div>
+        <h1>SuperBSC Settings</h1>
+        <p>Binance Skills Terminal Extension</p>
+      </div>
+    </div>
+
+    <!-- Square API Key -->
+    <div class="settings-section">
+      <h2>Binance Square</h2>
+      <div class="field">
+        <label for="squareKey">X-Square-OpenAPI-Key</label>
+        <div class="field-row">
+          <input type="password" id="squareKey" placeholder="Enter your Square API key">
+          <button id="toggleKey" class="btn-sm">Show</button>
+          <button id="saveKey" class="btn-sm btn-gold">Save</button>
+        </div>
+        <div class="field-hint">Required for posting to Binance Square. Get your key from Square settings.</div>
+        <div id="keyStatus" class="field-status"></div>
+      </div>
+    </div>
+
+    <!-- Behavior -->
+    <div class="settings-section">
+      <h2>Behavior</h2>
+      <div class="field">
+        <label class="toggle-label">
+          <input type="checkbox" id="autoEnrich" checked>
+          <span>Auto-enrich cashtags on Twitter</span>
+        </label>
+        <div class="field-hint">Automatically add price badges next to $CASHTAG mentions</div>
+      </div>
+      <div class="field">
+        <label class="toggle-label">
+          <input type="checkbox" id="hoverTooltip" checked>
+          <span>Show hover tooltip</span>
+        </label>
+        <div class="field-hint">Show mini price preview on badge hover</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="settings-section">
+      <h2>Content</h2>
+      <div class="field">
+        <label for="defaultTemplate">Default Template</label>
+        <select id="defaultTemplate">
+          <option value="custom-analysis">Custom Analysis</option>
+          <option value="market-brief">Market Brief</option>
+          <option value="smart-money-alert">Smart Money Alert</option>
+          <option value="funding-snapshot">Funding Snapshot</option>
+          <option value="sector-rotation">Sector Rotation</option>
+          <option value="regime-change">Regime Change</option>
+          <option value="accumulation-watchlist">Accumulation Watchlist</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="postSignature">Post Signature</label>
+        <input type="text" id="postSignature" value="via SuperBSC" maxlength="50">
+        <div class="field-hint">Appended to the end of every post</div>
+      </div>
+    </div>
+
+    <!-- Watchlist -->
+    <div class="settings-section">
+      <h2>Watchlist</h2>
+      <div class="field">
+        <label for="watchlistInput">Symbols (comma separated)</label>
+        <input type="text" id="watchlistInput" placeholder="BTC, ETH, SOL">
+        <button id="saveWatchlist" class="btn-sm btn-gold" style="margin-top:6px">Save Watchlist</button>
+      </div>
+    </div>
+
+    <div class="options-footer">
+      <span>SuperBSC v1.0.0</span>
+      <a href="https://mefai.io/superbsc" target="_blank">mefai.io/superbsc</a>
+    </div>
+  </div>
+
+  <script src="options.js" type="module"></script>
+</body>
+</html>
