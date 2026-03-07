@@ -1,5 +1,6 @@
 {
   "manifest_version": 3,
+  "default_locale": "en",
   "name": "SuperBSC - Binance Skills Terminal",
   "version": "1.0.0",
   "description": "Real-time crypto intelligence on Twitter. Click any cashtag to see Smart Money scores, funding rates, regime detection and more from SuperBSC terminal.",
