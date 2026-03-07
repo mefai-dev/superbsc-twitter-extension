@@ -134,6 +134,38 @@
       </div>
     </div>
 
+    <!-- Wallet Section -->
+    <div id="walletSection" class="wallet-section hidden">
+      <div class="wallet-header">
+        <span class="wallet-header-title">Wallet</span>
+        <span id="walletStatus" class="wallet-status disconnected">Disconnected</span>
+      </div>
+      <div class="wallet-body">
+        <div id="walletConnect" class="wallet-connect-prompt">
+          <button id="btnConnectWallet" class="btn-action btn-purple" style="width:100%">Connect Wallet</button>
+        </div>
+        <div id="walletInfo" class="hidden">
+          <div id="walletAddr" class="wallet-address"></div>
+          <div class="wallet-balance">
+            <div class="wallet-balance-item">
+              <div id="walletBnb" class="wallet-balance-amount">--</div>
+              <div class="wallet-balance-label">BNB</div>
+            </div>
+            <div class="wallet-balance-item">
+              <div id="walletUsdt" class="wallet-balance-amount">--</div>
+              <div class="wallet-balance-label">USDT</div>
+            </div>
+          </div>
+          <div class="wallet-send-form">
+            <input type="text" id="sendTo" placeholder="Recipient address (0x...)" spellcheck="false">
+            <input type="text" id="sendAmount" placeholder="Amount (BNB)" spellcheck="false">
+            <button id="btnSend" class="btn-action btn-green" style="width:100%">Send</button>
+          </div>
+          <div id="sendResult" class="post-result hidden" style="margin-top:8px"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- Action Bar -->
     <div id="actionBar" class="action-bar hidden">
       <button id="btnSquare" class="btn-action btn-gold">Post to Square</button>
