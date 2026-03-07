@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperBSC Analysis</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div id="panel">
+    <!-- Header -->
+    <div class="panel-header">
+      <div class="header-left">
+        <img src="../icons/icon-32.png" alt="SuperBSC" class="header-logo">
+        <span class="header-title">SuperBSC</span>
+      </div>
+      <div class="header-search">
+        <input type="text" id="symbolInput" placeholder="Symbol (BTC)" maxlength="10" spellcheck="false">
+        <button id="searchBtn" class="btn-icon" title="Search">Go</button>
+      </div>
+    </div>
+
+    <!-- Token Header -->
+    <div id="tokenHeader" class="section token-header hidden">
+      <div class="token-main">
+        <span id="tokenSymbol" class="token-symbol">--</span>
+        <span id="tokenPrice" class="token-price">--</span>
+      </div>
+      <div class="token-sub">
+        <span id="tokenChange" class="token-change">--</span>
+        <span id="tokenVolume" class="token-volume">Vol: --</span>
+        <span id="tokenRange" class="token-range">--</span>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <span>Loading analysis...</span>
+    </div>
+
+    <!-- Data Sections -->
+    <div id="dataContainer" class="hidden">
+      <!-- Smart Money -->
+      <div class="section" id="secSmartMoney">
+        <div class="section-title">Smart Money Radar</div>
+        <div class="section-body">
+          <div class="score-row">
+            <div class="score-gauge">
+              <div id="smScore" class="score-value">--</div>
+              <div class="score-label">/100</div>
+            </div>
+            <div id="smBias" class="bias-badge">--</div>
+          </div>
+          <div id="smBar" class="progress-bar"><div class="progress-fill"></div></div>
+          <div id="smFactors" class="factors-grid"></div>
+        </div>
+      </div>
+
+      <!-- Funding Rate -->
+      <div class="section" id="secFunding">
+        <div class="section-title">Funding Rate</div>
+        <div class="section-body">
+          <div class="metric-row">
+            <span class="metric-label">Rate</span>
+            <span id="fundRate" class="metric-value">--</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">APR</span>
+            <span id="fundAPR" class="metric-value">--</span>
+          </div>
+          <div id="fundExtreme" class="extreme-badge hidden">EXTREME</div>
+        </div>
+      </div>
+
+      <!-- Regime -->
+      <div class="section" id="secRegime">
+        <div class="section-title">Market Regime</div>
+        <div class="section-body">
+          <div id="regimeState" class="regime-badge">--</div>
+          <div class="metric-row">
+            <span class="metric-label">Confidence</span>
+            <span id="regimeConf" class="metric-value">--</span>
+          </div>
+          <div id="regimeBar" class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+      </div>
+
+      <!-- Accumulation -->
+      <div class="section" id="secAccumulation">
+        <div class="section-title">Accumulation Scanner</div>
+        <div class="section-body">
+          <div class="score-row">
+            <div class="score-gauge">
+              <div id="accScore" class="score-value">--</div>
+              <div class="score-label">/100</div>
+            </div>
+            <div id="accSignal" class="bias-badge">--</div>
+          </div>
+          <div id="accBar" class="progress-bar"><div class="progress-fill"></div></div>
+          <div id="accFactors" class="factors-grid"></div>
+        </div>
+      </div>
+
+      <!-- Top Traders -->
+      <div class="section" id="secTraders">
+        <div class="section-title">Top Trader Positioning</div>
+        <div class="section-body">
+          <div class="ls-bar">
+            <div id="longBar" class="ls-long" style="width:50%">
+              <span id="longPct">--</span>
+            </div>
+            <div id="shortBar" class="ls-short" style="width:50%">
+              <span id="shortPct">--</span>
+            </div>
+          </div>
+          <div class="ls-labels">
+            <span class="ls-label-long">Long</span>
+            <span class="ls-label-short">Short</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Basis Spread -->
+      <div class="section" id="secBasis">
+        <div class="section-title">Basis Spread</div>
+        <div class="section-body">
+          <div id="basisState" class="regime-badge">--</div>
+          <div class="metric-row">
+            <span class="metric-label">Annualized</span>
+            <span id="basisPct" class="metric-value">--</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div id="actionBar" class="action-bar hidden">
+      <button id="btnSquare" class="btn-action btn-gold">Post to Square</button>
+      <button id="btnTweet" class="btn-action btn-blue">Compose Tweet</button>
+      <button id="btnCross" class="btn-action btn-outline">Cross-Post</button>
+      <a id="btnTerminal" class="btn-action btn-ghost" href="https://mefai.io/superbsc" target="_blank" rel="noopener">Open Terminal</a>
+    </div>
+
+    <!-- Square Post Modal -->
+    <div id="squareModal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span>Post to Binance Square</span>
+          <button id="modalClose" class="btn-icon">X</button>
+        </div>
+        <div class="template-picker" id="templatePicker"></div>
+        <textarea id="postContent" rows="10" maxlength="2000" placeholder="Your analysis content..."></textarea>
+        <div class="char-counter"><span id="charCount">0</span>/2000</div>
+        <div class="modal-actions">
+          <button id="btnGenerate" class="btn-action btn-outline">Generate</button>
+          <button id="btnPost" class="btn-action btn-gold">Post</button>
+        </div>
+        <div id="postResult" class="post-result hidden"></div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state">
+      <img src="../icons/icon-48.png" alt="SuperBSC" class="empty-logo">
+      <p>Click a <strong>$CASHTAG</strong> on Twitter</p>
+      <p class="empty-sub">or search a symbol above</p>
+    </div>
+  </div>
+
+  <script src="sidepanel.js" type="module"></script>
+</body>
+</html>

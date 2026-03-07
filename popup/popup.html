@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperBSC</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <div class="popup-header">
+      <img src="../icons/icon-32.png" alt="SuperBSC" class="popup-logo">
+      <div class="popup-brand">
+        <div class="popup-title">SuperBSC</div>
+        <div class="popup-subtitle">Binance Skills Terminal</div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="popup-search">
+      <input type="text" id="searchInput" placeholder="Search symbol (BTC, ETH...)" spellcheck="false" autofocus>
+    </div>
+
+    <!-- Watchlist -->
+    <div class="popup-section">
+      <div class="popup-section-title">Watchlist</div>
+      <div id="watchlist" class="watchlist">
+        <div class="loading-sm"><div class="spinner-sm"></div></div>
+      </div>
+    </div>
+
+    <!-- Recent Posts -->
+    <div class="popup-section">
+      <div class="popup-section-title">Recent Posts</div>
+      <div id="recentPosts" class="recent-posts">
+        <div class="empty-sm">No posts yet</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <a href="https://mefai.io/superbsc" target="_blank" class="footer-link">Open Terminal</a>
+      <a href="options/options.html" target="_blank" class="footer-link">Settings</a>
+    </div>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

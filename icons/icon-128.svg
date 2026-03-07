@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- Background gradient with subtle radial glow -->
+    <radialGradient id="bgGlow" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#1a1d23"/>
+      <stop offset="100%" stop-color="#0b0e11"/>
+    </radialGradient>
+    <!-- Gold 3D gradient -->
+    <linearGradient id="gold128" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#fff3b0"/>
+      <stop offset="20%" stop-color="#ffe082"/>
+      <stop offset="50%" stop-color="#f0b90b"/>
+      <stop offset="80%" stop-color="#c8940a"/>
+      <stop offset="100%" stop-color="#8a6d0b"/>
+    </linearGradient>
+    <!-- Edge highlight -->
+    <linearGradient id="highlight128" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff3b0" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#fff3b0" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Border glow -->
+    <linearGradient id="border128" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0b90b" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#f0b90b" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#f0b90b" stop-opacity="0.5"/>
+    </linearGradient>
+    <!-- 3D depth shadow -->
+    <filter id="depth128">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#f0b90b" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <!-- Inner glow for metallic effect -->
+    <filter id="metallic">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+      <feSpecularLighting surfaceScale="3" specularConstant="1" specularExponent="20" lighting-color="#ffe082">
+        <fePointLight x="64" y="30" z="80"/>
+      </feSpecularLighting>
+      <feComposite in="SourceGraphic" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="0.3" k4="0"/>
+    </filter>
+    <!-- Ambient glow behind letter -->
+    <filter id="ambientGlow">
+      <feGaussianBlur stdDeviation="8" result="glow"/>
+      <feMerge><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" rx="26" fill="url(#bgGlow)"/>
+  <!-- Border with glow -->
+  <rect x="1.5" y="1.5" width="125" height="125" rx="24.5" fill="none" stroke="url(#border128)" stroke-width="1.5"/>
+
+  <!-- Ambient glow behind the S -->
+  <g filter="url(#ambientGlow)">
+    <ellipse cx="64" cy="64" rx="25" ry="30" fill="#f0b90b" opacity="0.08"/>
+  </g>
+
+  <!-- 3D S Letter with full depth -->
+  <g filter="url(#depth128)">
+    <!-- Back shadow layer (creates 3D extrusion) -->
+    <path d="M80 40 C80 31, 73 25, 64 25 C53 25, 46 32, 46 40 C46 48, 51 52, 64 56 C77 60, 82 64, 82 72 C82 81, 75 88, 64 88 C53 88, 46 81, 46 74"
+          fill="none" stroke="#6b510a" stroke-width="14" stroke-linecap="round"
+          transform="translate(1.5, 2.5)"/>
+    <!-- Mid layer -->
+    <path d="M80 40 C80 31, 73 25, 64 25 C53 25, 46 32, 46 40 C46 48, 51 52, 64 56 C77 60, 82 64, 82 72 C82 81, 75 88, 64 88 C53 88, 46 81, 46 74"
+          fill="none" stroke="#9e7a0c" stroke-width="13" stroke-linecap="round"
+          transform="translate(0.5, 1)"/>
+    <!-- Main gold stroke -->
+    <path d="M80 40 C80 31, 73 25, 64 25 C53 25, 46 32, 46 40 C46 48, 51 52, 64 56 C77 60, 82 64, 82 72 C82 81, 75 88, 64 88 C53 88, 46 81, 46 74"
+          fill="none" stroke="url(#gold128)" stroke-width="12" stroke-linecap="round"/>
+    <!-- Top highlight (metallic reflection) -->
+    <path d="M80 40 C80 31, 73 25, 64 25 C53 25, 46 32, 46 40 C46 48, 51 52, 64 56"
+          fill="none" stroke="url(#highlight128)" stroke-width="5" stroke-linecap="round"/>
+    <!-- Bottom subtle reflection -->
+    <path d="M82 72 C82 81, 75 88, 64 88 C53 88, 46 81, 46 74"
+          fill="none" stroke="#ffe082" stroke-width="2" stroke-linecap="round" stroke-opacity="0.25"/>
+  </g>
+
+  <!-- Corner accents (3D dots) -->
+  <g>
+    <circle cx="24" cy="24" r="3" fill="#f0b90b" opacity="0.3"/>
+    <circle cx="24" cy="24" r="1.5" fill="#ffe082" opacity="0.5"/>
+    <circle cx="104" cy="104" r="3" fill="#f0b90b" opacity="0.3"/>
+    <circle cx="104" cy="104" r="1.5" fill="#ffe082" opacity="0.5"/>
+  </g>
+
+  <!-- Subtle grid lines for tech feel -->
+  <line x1="20" y1="108" x2="40" y2="108" stroke="#f0b90b" stroke-opacity="0.1" stroke-width="0.5"/>
+  <line x1="88" y1="20" x2="108" y2="20" stroke="#f0b90b" stroke-opacity="0.1" stroke-width="0.5"/>
+</svg>
