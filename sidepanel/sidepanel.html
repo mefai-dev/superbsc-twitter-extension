@@ -41,22 +41,6 @@
 
     <!-- Data Sections -->
     <div id="dataContainer" class="hidden">
-      <!-- Smart Money -->
-      <div class="section" id="secSmartMoney">
-        <div class="section-title">Smart Money Radar</div>
-        <div class="section-body">
-          <div class="score-row">
-            <div class="score-gauge">
-              <div id="smScore" class="score-value">--</div>
-              <div class="score-label">/100</div>
-            </div>
-            <div id="smBias" class="bias-badge">--</div>
-          </div>
-          <div id="smBar" class="progress-bar"><div class="progress-fill"></div></div>
-          <div id="smFactors" class="factors-grid"></div>
-        </div>
-      </div>
-
       <!-- Funding Rate -->
       <div class="section" id="secFunding">
         <div class="section-title">Funding Rate</div>
@@ -66,39 +50,14 @@
             <span id="fundRate" class="metric-value">--</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">APR</span>
+            <span class="metric-label">Annualized APR</span>
             <span id="fundAPR" class="metric-value">--</span>
           </div>
-          <div id="fundExtreme" class="extreme-badge hidden">EXTREME</div>
-        </div>
-      </div>
-
-      <!-- Regime -->
-      <div class="section" id="secRegime">
-        <div class="section-title">Market Regime</div>
-        <div class="section-body">
-          <div id="regimeState" class="regime-badge">--</div>
           <div class="metric-row">
-            <span class="metric-label">Confidence</span>
-            <span id="regimeConf" class="metric-value">--</span>
+            <span class="metric-label">Mark Price</span>
+            <span id="fundMark" class="metric-value">--</span>
           </div>
-          <div id="regimeBar" class="progress-bar"><div class="progress-fill"></div></div>
-        </div>
-      </div>
-
-      <!-- Accumulation -->
-      <div class="section" id="secAccumulation">
-        <div class="section-title">Accumulation Scanner</div>
-        <div class="section-body">
-          <div class="score-row">
-            <div class="score-gauge">
-              <div id="accScore" class="score-value">--</div>
-              <div class="score-label">/100</div>
-            </div>
-            <div id="accSignal" class="bias-badge">--</div>
-          </div>
-          <div id="accBar" class="progress-bar"><div class="progress-fill"></div></div>
-          <div id="accFactors" class="factors-grid"></div>
+          <div id="fundExtreme" class="extreme-badge hidden">EXTREME</div>
         </div>
       </div>
 
@@ -121,6 +80,37 @@
         </div>
       </div>
 
+      <!-- Taker Pressure -->
+      <div class="section" id="secTaker">
+        <div class="section-title">Taker Buy/Sell Pressure</div>
+        <div class="section-body">
+          <div class="score-row">
+            <div class="score-gauge">
+              <div id="takerRatio" class="score-value">--</div>
+              <div class="score-label">ratio</div>
+            </div>
+            <div id="takerPressure" class="bias-badge">--</div>
+          </div>
+          <div id="takerBar" class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+      </div>
+
+      <!-- Open Interest -->
+      <div class="section" id="secOI">
+        <div class="section-title">Open Interest</div>
+        <div class="section-body">
+          <div class="metric-row">
+            <span class="metric-label">Current OI</span>
+            <span id="oiValue" class="metric-value">--</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">6h Change</span>
+            <span id="oiChange" class="metric-value">--</span>
+          </div>
+          <div id="oiTrend" class="regime-badge" style="margin-top:6px">--</div>
+        </div>
+      </div>
+
       <!-- Basis Spread -->
       <div class="section" id="secBasis">
         <div class="section-title">Basis Spread</div>
@@ -129,6 +119,25 @@
           <div class="metric-row">
             <span class="metric-label">Annualized</span>
             <span id="basisPct" class="metric-value">--</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Ratio (Retail) -->
+      <div class="section" id="secAccount">
+        <div class="section-title">Account Long/Short Ratio</div>
+        <div class="section-body">
+          <div class="ls-bar">
+            <div id="accLongBar" class="ls-long" style="width:50%">
+              <span id="accLongPct">--</span>
+            </div>
+            <div id="accShortBar" class="ls-short" style="width:50%">
+              <span id="accShortPct">--</span>
+            </div>
+          </div>
+          <div class="ls-labels">
+            <span class="ls-label-long">Long Accounts</span>
+            <span class="ls-label-short">Short Accounts</span>
           </div>
         </div>
       </div>
@@ -141,7 +150,7 @@
         <span id="walletStatus" class="wallet-status disconnected">Disconnected</span>
       </div>
       <div class="wallet-body">
-        <div id="walletConnect" class="wallet-connect-prompt">
+        <div id="walletConnect">
           <button id="btnConnectWallet" class="btn-action btn-purple" style="width:100%">Connect Wallet</button>
         </div>
         <div id="walletInfo" class="hidden">

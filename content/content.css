@@ -27,6 +27,20 @@
   height: 12px;
   border-radius: 2px;
 }
+.sbsc-badge-s {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #f5d060, #f0b90b, #c8940a);
+  color: #0b0e11;
+  font-size: 9px;
+  font-weight: 900;
+  border-radius: 3px;
+  flex-shrink: 0;
+  line-height: 1;
+}
 .sbsc-badge-price {
   color: #f0b90b;
   font-weight: 600;
