@@ -13,9 +13,9 @@ async function fetchJson(url) {
   return res.json();
 }
 
-// Spot ticker via proxy
+// Spot 24hr ticker via proxy (full data: price, change, volume, high, low)
 export async function getSpotTicker(symbol) {
-  const data = await fetchJson(`${SUPERBSC}/api/spot/ticker?symbol=${symbol}`);
+  const data = await fetchJson(`${SUPERBSC}/api/spot/tickers?symbols=${symbol}`);
   return {
     price: data.lastPrice,
     change: data.priceChangePercent,
@@ -42,8 +42,8 @@ export async function getFunding(symbol) {
   const fSym = futuresSymbol(symbol);
   try {
     const data = await fetchJson(`${SUPERBSC}/api/futures/premiumIndex?symbol=${fSym}`);
-    // Can be single object or array
-    const item = Array.isArray(data) ? data[0] : data;
+    // API may return all symbols as array — filter to matching symbol
+    const item = Array.isArray(data) ? data.find(d => d.symbol === fSym) || data[0] : data;
     if (!item) return null;
     const rate = parseFloat(item.lastFundingRate || 0);
     return {
@@ -140,7 +140,7 @@ export async function getFutures24h(symbol) {
   const fSym = futuresSymbol(symbol);
   try {
     const data = await fetchJson(`${SUPERBSC}/api/futures/ticker24hr?symbol=${fSym}`);
-    const item = Array.isArray(data) ? data[0] : data;
+    const item = Array.isArray(data) ? data.find(d => d.symbol === fSym) || data[0] : data;
     if (!item) return null;
     return {
       price: item.lastPrice,
