@@ -1,5 +1,8 @@
 # SuperBSC Twitter Extension
 
+[![CI](https://github.com/mefai-dev/superbsc-twitter-extension/actions/workflows/ci.yml/badge.svg)](https://github.com/mefai-dev/superbsc-twitter-extension/actions/workflows/ci.yml)
+
+
 Browser extension that brings Binance market intelligence directly into Twitter/X.
 
 ![SuperBSC](icons/icon-128.png)
