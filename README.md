@@ -20,7 +20,7 @@ Browser extension that brings Binance market intelligence directly into Twitter/
 - **Account Long/Short** — retail investor sentiment bar
 - Post to **Binance Square** with 5 content templates
 - **Compose Tweet** with data-driven market analysis
-- **Cross-Post** to Square + Twitter simultaneously
+- **Cross Post** to Square + Twitter simultaneously
 - **BSC Wallet** — connect MetaMask, view BNB/USDT balance, send BNB
 - **Watchlist** — track favorite coins with live prices
 - 52 coins supported including meme coins (PEPE, FLOKI, BONK, SHIB)
@@ -34,7 +34,7 @@ Browser extension that brings Binance market intelligence directly into Twitter/
 2. Download `superbsc-twitter-extension-v*.zip` from Assets
 3. Extract the zip to a folder
 4. Open `chrome://extensions` in Chrome
-5. Enable **Developer mode** (toggle in top-right corner)
+5. Enable **Developer mode** (toggle in top right corner)
 6. Click **Load unpacked**
 7. Select the extracted folder
 8. Go to [twitter.com](https://twitter.com) — cashtags will show live prices
@@ -51,7 +51,7 @@ Then follow steps 4-8 above, selecting the cloned directory.
 ### Binance Square Posting (Optional)
 1. Click the SuperBSC icon in Chrome toolbar
 2. Click **Settings**
-3. Enter your **X-Square-OpenAPI-Key**
+3. Enter your **X Square OpenAPI Key**
 4. Now you can post analysis directly to Binance Square
 
 ### Watchlist
@@ -64,7 +64,7 @@ Then follow steps 4-8 above, selecting the cloned directory.
 2. Cashtags like **$BTC**, **$ETH**, **$SOL** get enriched with live price badges
 3. **Hover** any badge to see a tooltip with price, 24h change, and volume
 4. **Click** any badge to open the analysis side panel
-5. Use action buttons to **Post to Square**, **Compose Tweet**, or **Cross-Post**
+5. Use action buttons to **Post to Square**, **Compose Tweet**, or **Cross Post**
 6. Connect MetaMask wallet to view BSC balance and send BNB
 
 ## Data Sources
@@ -100,7 +100,7 @@ sidepanel/        Analysis panel (6 sections + wallet + action bar)
 popup/            Quick search + watchlist + recent posts
 options/          Settings page (API key, preferences)
 shared/           Constants, utilities, theme
-icons/            Custom 3D-designed SVG/PNG icons
+icons/            Custom 3D designed SVG/PNG icons
 _locales/         English + Turkish translations
 ```
 
