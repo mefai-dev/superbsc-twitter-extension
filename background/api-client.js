@@ -42,7 +42,7 @@ export async function getFunding(symbol) {
   const fSym = futuresSymbol(symbol);
   try {
     const data = await fetchJson(`${SUPERBSC}/api/futures/premiumIndex?symbol=${fSym}`);
-    // API may return all symbols as array — filter to matching symbol
+    // API may return all symbols as array ··· filter to matching symbol
     const item = Array.isArray(data) ? data.find(d => d.symbol === fSym) || data[0] : data;
     if (!item) return null;
     const rate = parseFloat(item.lastFundingRate || 0);

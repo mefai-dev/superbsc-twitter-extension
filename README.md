@@ -12,17 +12,17 @@ Browser extension that brings Binance market intelligence directly into Twitter/
 - Detects cashtags ($BTC, $ETH, $SOL) in tweets automatically
 - Injects real-time price badges with 24h change next to each cashtag
 - Click any badge to open a side panel with full market analysis
-- **Funding Rate** — rate, annualized APR, extreme flags, mark price
-- **Top Trader Positioning** — long/short ratio bar (whale sentiment)
-- **Taker Buy/Sell Pressure** — buy/sell ratio and pressure direction
-- **Open Interest** — current OI, 6h trend (RISING / FALLING / STABLE)
-- **Basis Spread** — Contango/Backwardation with annualized %
-- **Account Long/Short** — retail investor sentiment bar
+- **Funding Rate** ··· rate, annualized APR, extreme flags, mark price
+- **Top Trader Positioning** ··· long/short ratio bar (whale sentiment)
+- **Taker Buy/Sell Pressure** ··· buy/sell ratio and pressure direction
+- **Open Interest** ··· current OI, 6h trend (RISING / FALLING / STABLE)
+- **Basis Spread** ··· Contango/Backwardation with annualized %
+- **Account Long/Short** ··· retail investor sentiment bar
 - Post to **Binance Square** with 5 content templates
 - **Compose Tweet** with data-driven market analysis
 - **Cross Post** to Square + Twitter simultaneously
-- **BSC Wallet** — connect MetaMask, view BNB/USDT balance, send BNB
-- **Watchlist** — track favorite coins with live prices
+- **BSC Wallet** ··· connect MetaMask, view BNB/USDT balance, send BNB
+- **Watchlist** ··· track favorite coins with live prices
 - 52 coins supported including meme coins (PEPE, FLOKI, BONK, SHIB)
 - 9 parallel Binance API endpoints with LRU cache
 
@@ -37,7 +37,7 @@ Browser extension that brings Binance market intelligence directly into Twitter/
 5. Enable **Developer mode** (toggle in top right corner)
 6. Click **Load unpacked**
 7. Select the extracted folder
-8. Go to [twitter.com](https://twitter.com) — cashtags will show live prices
+8. Go to [twitter.com](https://twitter.com) ··· cashtags will show live prices
 
 ### From Source
 

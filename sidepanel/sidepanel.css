@@ -198,7 +198,7 @@ body {
   left: 120%;
 }
 
-/* Gold Button — Primary CTA (Post to Square) */
+/* Gold Button ··· Primary CTA (Post to Square) */
 .btn-gold {
   background: linear-gradient(180deg, #f5d060 0%, #f0b90b 40%, #c8940a 100%);
   color: #0b0e11;
@@ -226,7 +226,7 @@ body {
     0 2px 4px rgba(240, 185, 11, 0.2);
 }
 
-/* Blue Button — Twitter (Compose Tweet) */
+/* Blue Button ··· Twitter (Compose Tweet) */
 .btn-blue {
   background: linear-gradient(180deg, #42a5f5 0%, #1e88e5 40%, #1565c0 100%);
   color: #fff;
@@ -254,7 +254,7 @@ body {
     0 2px 4px rgba(30, 136, 229, 0.2);
 }
 
-/* Outline Button — Cross-Post */
+/* Outline Button ··· Cross-Post */
 .btn-outline {
   background: linear-gradient(180deg, rgba(240,185,11,0.08) 0%, rgba(240,185,11,0.02) 100%);
   color: #f0b90b;
@@ -277,7 +277,7 @@ body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
-/* Green Button — Wallet / Send */
+/* Green Button ··· Wallet / Send */
 .btn-green {
   background: linear-gradient(180deg, #34d399 0%, #0ecb81 40%, #0ba86b 100%);
   color: #0b0e11;
@@ -305,7 +305,7 @@ body {
     0 2px 4px rgba(14, 203, 129, 0.2);
 }
 
-/* Ghost Button — Open Terminal */
+/* Ghost Button ··· Open Terminal */
 .btn-ghost {
   background: linear-gradient(180deg, rgba(132,142,156,0.08) 0%, rgba(132,142,156,0.02) 100%);
   color: #848e9c;
@@ -324,7 +324,7 @@ body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
-/* Purple Button — Wallet Connect */
+/* Purple Button ··· Wallet Connect */
 .btn-purple {
   background: linear-gradient(180deg, #a78bfa 0%, #7b61ff 40%, #5b3fd4 100%);
   color: #fff;
